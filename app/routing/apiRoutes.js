@@ -1,4 +1,4 @@
-var path = require("path");
+	var path = require("path");
 var friendsData = require("../data/friends");
 
 module.exports = function(app) {
@@ -24,11 +24,12 @@ module.exports = function(app) {
 		//loop through scores of survery
 		for (var i = 0; i < friendsData.length; i++){
 			//console.log(friendsData[i].name);
-			//totalDifference = 0;
+			totalDifference = 0;
 
 			// loop through score to calculate difference
 			for ( var j = 0; j < friendsData[i].scores.length; j++) {
 				totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friendsData[i].scores[j]));
+				
 			}
 				if (totalDifference <= bestMatch.friendDifference){
 					bestMatch.name = friendsData[i].name;
